@@ -1,8 +1,8 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = main.cpp
+SRCS = ClapTrap.cpp main.cpp ScavTrap.cpp
 OBJS = $(SRCS:%.cpp=%.o)
-NAME = replace
+NAME = a.out
 
 all : $(NAME)
 
