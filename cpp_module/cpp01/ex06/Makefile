@@ -1,8 +1,8 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = Karen.cpp main.cpp
+SRCS = Harl.cpp main.cpp
 OBJS = $(SRCS:%.cpp=%.o)
-NAME = karen
+NAME = harl
 
 all : $(NAME)
 
