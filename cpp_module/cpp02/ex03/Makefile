@@ -1,6 +1,6 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = Fixed.cpp main.cpp
+SRCS = Fixed.cpp main.cpp Point.cpp bsp.cpp
 OBJS = $(SRCS:%.cpp=%.o)
 NAME = a.out
 

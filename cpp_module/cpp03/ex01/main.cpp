@@ -2,7 +2,7 @@
 
 int main()
 {
-	ScavTrap st = ScavTrap();
-	for (int i = 0 ; i < 50; i++)
-		st.Attack("BBB");
+	ScavTrap st = ScavTrap("A");
+	for (int i = 0 ; i < 51; i++)
+		st.attack("BBB");
 }

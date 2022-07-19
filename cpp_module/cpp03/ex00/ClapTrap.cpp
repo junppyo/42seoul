@@ -11,7 +11,7 @@ ClapTrap::ClapTrap()
 	std::cout << "Create Player " << name << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string input)
+ClapTrap::ClapTrap(const std::string &input)
 {
 	hit = 10;
 	max_hit = 10;
@@ -27,7 +27,7 @@ ClapTrap::~ClapTrap()
 	std::cout << name << " GAME OVER" << std::endl;
 }
 
-void ClapTrap::Attack(std::string const& target) {
+void ClapTrap::attack(const std::string& target) {
 	if (!hit)
 	{
 		std::cout << "ClapTrap " << name << "'s HP is 0!!!!" << std::endl;

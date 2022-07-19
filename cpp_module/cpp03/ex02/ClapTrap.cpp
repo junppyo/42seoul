@@ -6,12 +6,12 @@ ClapTrap::ClapTrap()
 	max_hit = 10;
 	energy = 10;
 	max_energy = 10;
-	name = "ClapTrap";
+	name = "NULL";
 	damage = 0;
 	std::cout << "Create Player " << name << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string input)
+ClapTrap::ClapTrap(const std::string &input)
 {
 	hit = 10;
 	max_hit = 10;
@@ -27,7 +27,7 @@ ClapTrap::~ClapTrap()
 	std::cout << name << " GAME OVER" << std::endl;
 }
 
-void ClapTrap::Attack(std::string const& target) {
+void ClapTrap::attack(const std::string& target) {
 	if (!hit)
 	{
 		std::cout << "ClapTrap " << name << "'s HP is 0!!!!" << std::endl;
@@ -43,7 +43,7 @@ void ClapTrap::Attack(std::string const& target) {
 }
 void ClapTrap::takeDamage(unsigned int amount) {
 	hit -= amount;
-	std::cout << "ClapTrap " << name << " takes " << amount << " points of damage!" << std::endl;
+	std::cout << name << " takes " << amount << " points of damage!" << std::endl;
 	if (hit < 0)
 		hit = 0;
 }
@@ -51,20 +51,20 @@ void ClapTrap::takeDamage(unsigned int amount) {
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (!hit)
 	{
-		std::cout << "ClapTrap " << name << "'s HP is 0!!!!" << std::endl;
+		std::cout << name << "'s HP is 0!!!!" << std::endl;
 		return ;
 	}
 	if (!energy)
 	{
-		std::cout << "ClapTrap " << name << "'s ENERGY is 0!!!!" << std::endl;
+		std::cout << name << "'s ENERGY is 0!!!!" << std::endl;
 		return ;
 	}
 	energy -= 1;
 	hit += amount;
 	if (hit > max_hit)
 		hit = max_hit;
-	std::cout << "ClapTrap " << name << " is repair " << amount << " points."  << std::endl;
-	std::cout << "ClapTrap " << name << "'s HP is " << hit << std::endl;
+	std::cout << name << " is repair " << amount << " points."  << std::endl;
+	std::cout << name << "'s HP is " << hit << std::endl;
 }
 
 int ClapTrap::get_hp()

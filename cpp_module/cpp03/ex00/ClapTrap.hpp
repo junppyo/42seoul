@@ -16,9 +16,9 @@ class ClapTrap
 		int damage;
 	public:
 		ClapTrap();
-		ClapTrap(std::string);
+		ClapTrap(const std::string&);
 		~ClapTrap();
-		void Attack(std::string const&);
+		void attack(const std::string&);
 		void takeDamage(unsigned int);
 		void beRepaired(unsigned int amount);
 		int get_hp();
