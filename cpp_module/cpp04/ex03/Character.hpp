@@ -9,16 +9,18 @@ class Character : public ICharacter
 {
 	private:
 		std::string name;
-		AMateria *inventory[5];
+		AMateria *bag[4];
 		int idx;
 	public:
 		Character(const std::string&);
-		virtual ~Character() {}
+		~Character();
 		std::string const & getName() const;
-		void equip(AMateria* m);
-		void unequip(int n);
-		void use(int n, ICharacter& target);
+		void equip(AMateria*);
+		void unequip(int);
+		void use(int, ICharacter&);
 		void showStatus() const;
+		AMateria *getBag(int) const;
+		Character& operator=(const Character&);
 };
 
 #endif
