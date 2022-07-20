@@ -1,6 +1,6 @@
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS = Animal.cpp Cat.cpp Dog.cpp main.cpp
+SRCS = Animal.cpp Cat.cpp Dog.cpp main.cpp WrongAnimal.cpp WrongCat.cpp
 OBJS = $(SRCS:%.cpp=%.o)
 NAME = a.out
 

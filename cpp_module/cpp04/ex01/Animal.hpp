@@ -5,10 +5,12 @@
 #include "Brain.hpp"
 class Animal
 {
+	protected:
+		std::string type;
 	public:
 		Animal();
 		virtual ~Animal();
-		virtual std::string getType() const;
+		std::string getType() const;
 		virtual void makeSound() const;
 };
 

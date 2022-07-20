@@ -4,6 +4,7 @@ Dog::Dog()
 {
 	std::cout << "New Dog !" << std::endl;
 	brain = new Brain();
+	type = "Dog";
 }
 
 Dog::Dog(const Dog& input)
@@ -14,6 +15,7 @@ Dog::Dog(const Dog& input)
 		brain = NULL;
 	}
 	brain = new Brain(*input.get_brain());
+	type = input.getType();
 	std::cout << "Copy Dog !" << std::endl;
 }
 
@@ -21,11 +23,6 @@ Dog::~Dog()
 {
 	delete brain;
 	std::cout << "Delete Dog" << std::endl;
-}
-
-std::string Dog::getType() const
-{
-	return "I'm Dog!";
 }
 
 void Dog::makeSound() const
@@ -44,6 +41,7 @@ Dog& Dog::operator=(const Dog& input)
 	if (this == &input)
 		return *this;
 	std::cout << "Copy Dog !" << std::endl;
+	type = input.getType();
 	if (brain)
 	{
 		delete brain;

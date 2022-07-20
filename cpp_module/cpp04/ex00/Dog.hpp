@@ -8,7 +8,6 @@ class Dog : public Animal
 	public:
 		Dog();
 		~Dog();
-		std::string getType() const;
 		void makeSound() const;
 };
 

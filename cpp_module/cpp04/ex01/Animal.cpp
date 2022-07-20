@@ -3,6 +3,7 @@
 Animal::Animal()
 {
 	std::cout << "New Animal !" << std::endl;
+	type = "Animal";
 }
 
 Animal::~Animal()
@@ -12,7 +13,7 @@ Animal::~Animal()
 
 std::string Animal::getType() const
 {
-	return "It's just animal";
+	return type;
 }
 
 void Animal::makeSound() const

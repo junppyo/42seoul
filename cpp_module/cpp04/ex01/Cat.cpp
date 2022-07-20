@@ -4,6 +4,7 @@ Cat::Cat()
 {
 	std::cout << "New Cat !" << std::endl;
 	brain = new Brain();
+	type = "Cat";
 }
 
 Cat::Cat(const Cat& input)
@@ -14,6 +15,7 @@ Cat::Cat(const Cat& input)
 		brain = NULL;
 	}
 	brain = new Brain(*input.get_brain());
+	type = input.getType();
 	std::cout << "Copy Cat !" << std::endl;
 }
 
@@ -21,11 +23,6 @@ Cat::~Cat()
 {
 	delete brain;
 	std::cout << "Delete Cat" << std::endl;
-}
-
-std::string Cat::getType() const
-{
-	return "I'm Cat!";
 }
 
 void Cat::makeSound() const
@@ -49,5 +46,6 @@ Cat& Cat::operator=(const Cat& input)
 		brain = NULL;
 	}
 	brain = new Brain(*input.get_brain());
+	type = input.getType();
 	return *this;
 }

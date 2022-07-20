@@ -1,15 +1,15 @@
 #include "iostream"
 #include "fstream"
+#include <unistd.h>
 
 std::string file_read(char *filename)
 {
 	std::ifstream in(filename);
-
 	if (!in.is_open())
-		return (0);
+		return "";
 	std::string str;
 	in >> str;
-	while (in.tellg() > std::ios::end)
+	while (in.tellg() > 0)
 	{
 		std::string tmp;
 		in >> tmp;
@@ -30,7 +30,7 @@ std::string _replace(std::string str, std::string from, std::string to)
 
 	start = 0;
 	loc = 0;
-	while ((loc = str.find(from, start)) < str.length())
+	while ((unsigned int)(loc = str.find(from, start)) < str.length())
 	{
 		if (start != loc)
 			ret.append(str.substr(start, loc - start));
@@ -60,6 +60,12 @@ int main(int argc, char *argv[])
 	std::string rep;
 
 	str = file_read(argv[1]);
+	if (str.length() == 0)
+	{
+		std::cout << "Not Exist or Empty File" << std::endl;
+		return 1;
+	}
 	rep = _replace(str, argv2, argv3);
 	file_write(rep, argv[1]);
+	return 0;
 }
