@@ -32,7 +32,7 @@ void Character::equip(AMateria* m)
 
 void Character::unequip(int n)
 {
-	if (idx < n)
+	if (idx <= n)
 	{
 		std::cout << "Invalid Item" << std::endl;
 		return ;

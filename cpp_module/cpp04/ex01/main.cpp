@@ -62,5 +62,9 @@ int main(void)
 	test_array();
 	std::cout << "\n==============test brain==============\n";
 	test_brain();
+
+	Cat a;
+	Cat *b = new Cat(a);	
+	std::cout << *(b->get_brain()) << std::endl;
 	return 0;
 }

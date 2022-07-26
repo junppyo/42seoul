@@ -9,11 +9,6 @@ Cat::Cat()
 
 Cat::Cat(const Cat& input)
 {
-	if (brain)
-	{
-		delete brain;
-		brain = NULL;
-	}
 	brain = new Brain(*input.get_brain());
 	type = input.getType();
 	std::cout << "Copy Cat !" << std::endl;
@@ -39,13 +34,12 @@ Cat& Cat::operator=(const Cat& input)
 {
 	if (this == &input)
 		return *this;
-	std::cout << "Copy Cat !" << std::endl;
 	if (brain)
 	{
 		delete brain;
 		brain = NULL;
 	}
 	brain = new Brain(*input.get_brain());
-	type = input.getType();
+	std::cout << "Copy Cat !" << std::endl;
 	return *this;
 }
