@@ -1,25 +1,6 @@
 #include "Cat.hpp"
 #include "Dog.hpp"
 
-void test_normal() {
-	const Animal* i = new Cat();
-	const Animal* j = new Dog();
-	const Animal* k = new Dog();
-
-	std::cout << std::endl;
-	i->makeSound();
-	j->makeSound();
-	std::cout << std::endl;
-	*(const_cast<Animal*>(k)) = *(const_cast<Animal*>(j));
-	std::cout << std::endl;
-	k->makeSound();
-	std::cout << std::endl;
-
-	delete k;
-	delete j;
-	delete i;
-}
-
 void test_array() {
 	Animal* meta[10];
 
@@ -54,17 +35,23 @@ void test_brain()
 	delete brain2;
 }
 
+void test_copy()
+{
+	Cat a;
+	(const_cast<Brain *>(a.get_brain()))->set_idea(0, "asdf");
+	
+	Cat b = a;
+	std::cout << *(b.get_brain()) << std::endl;
+}
+
 int main(void)
 {
-	std::cout << "\n==============test normal==============\n";
-	test_normal();
 	std::cout << "\n==============test array==============\n";
 	test_array();
 	std::cout << "\n==============test brain==============\n";
 	test_brain();
+	std::cout << "\n==============test copy==============\n";
+	test_copy();
 
-	Cat a;
-	Cat *b = new Cat(a);	
-	std::cout << *(b->get_brain()) << std::endl;
 	return 0;
 }
