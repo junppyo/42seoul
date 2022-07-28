@@ -3,10 +3,24 @@
 
 void formTest()
 {
-	Form form1("A", 0, 10);
-	Form form2("B", 1, 160);
-	Form form3("C", 10, 10);
-	std::cout << form3  << std::endl;
+	try
+	{
+		Form form1("A", 0, 10);
+		Form form2("B", 1, 160);
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		Form form3("C", 10, 10);
+		std::cout << form3  << std::endl;
+	}
+	catch (std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }
 
 void signTest()
@@ -18,6 +32,7 @@ void signTest()
 
 	bureaucrat1.signForm(form1);
 	bureaucrat2.signForm(form2);
+	
 	std::cout << form1 << std::endl;
 	std::cout << form2 << std::endl;
 }

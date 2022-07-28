@@ -21,6 +21,4 @@ void ExecuteTest()
 int main()
 {
 	ExecuteTest();
-	std::cout << "\n=================================\n" << std::endl;
-
 }

@@ -8,20 +8,12 @@ Bureaucrat::Bureaucrat() : name("NULL"), grade(15)
 
 Bureaucrat::Bureaucrat(const std::string& _name, const int& n) : name(_name)
 {
-	try
-	{
-		std::cout << "hire Burecrate " << name << std::endl;
-		if (n <= 0)
-			throw GradeTooHighException();
-		else if (n > 150)
-			throw GradeTooLowException();
-		this->grade = n;
-	}
-	catch (std::exception& e)
-	{
-		this->grade = 150;
-		std::cout << e.what() << std::endl;
-	}
+	if (n <= 0)
+		throw GradeTooHighException();
+	else if (n > 150)
+		throw GradeTooLowException();
+	this->grade = n;
+	std::cout << "hire Burecrate " << name << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& b) : name(b.getName())
